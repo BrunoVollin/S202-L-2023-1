@@ -34,7 +34,9 @@ class PersonCLI(SimpleCLI):
     def read_person(self):
         id = input("Enter the id: ")
         person = self.person_model.read_person_by_id(id)
-        print(person)
+        if person:
+            print(f"Name: {person['name']}")
+            print(f"Age: {person['age']}")
 
     def update_person(self):
         id = input("Enter the id: ")
